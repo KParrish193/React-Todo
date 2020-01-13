@@ -2,7 +2,7 @@ import React, { Component }from 'react';
 
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
-//CSS?//
+import './Todo.css';
 
 const todo = [
   {
