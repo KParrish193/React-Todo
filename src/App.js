@@ -71,12 +71,23 @@ class App extends Component {
     });
   };
 
+  deleteTodo = () => {
+  const clearCompleted = this.state.todoList.filter(todo => {
+    return todo.completed === false;
+  })
+  this.setState ({
+    todoList : clearCompleted
+  }) 
+  console.log(clearCompleted);
+  };
+
   render() {
-    console.log('rendering...');
+    console.log('rendering...', this.state.todoList);
+
     return (
       <div className="App">
         <div className="header">
-          <h2>To-Do List App!</h2>
+          <h2>To-Do List:</h2>
         </div>
       
         <div className="form">
@@ -89,6 +100,10 @@ class App extends Component {
             toggleTodo={this.toggleTodo}
           />
         </div>
+
+        <button className="clear-btn" onClick={this.deleteTodo}>
+                Clear Completed To-Do's
+        </button>
       </div>
     );
   }

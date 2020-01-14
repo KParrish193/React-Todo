@@ -7,6 +7,8 @@ const TodoList = props => {
 
     const sortByCompletedList = props.todo.sort((a, b) => a.completed - b.completed);
     
+    
+
     return (
     <div className="todo-list">
         {props.todo.map(todo => (
